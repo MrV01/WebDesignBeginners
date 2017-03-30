@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Homepage</title>
+	</head>
+
+	<body>
+		<h1>Homepage</h1>
+		<p>Welcome to the homepage. Learn more about my <a href="favorite-colors.html">favorite colors</a>.</p>
+		<h2>Audio</h2>
+		<p> I would like to listen the music on my page
+			<audio controls>
+				<source src="audio/ukulele.mp3" type="audio/mpeg"> <!-- Modern browsers -->
+				<source src="audio/ukulele.ogg" type="audio/ogg"> <!-- Old browsers suport ogg format -->
+				<a href="audio/ukulele.mp3">Ukulele audio recording</a> <!-- fall back for really OLD browsers -->
+			</audio>
+		</p>
+		<h2>And watch a Video</h2>
+		<p>I have included example of the video file on my page</p>
+		<video controls="controls">
+			<source src="video/example.mp4" type="video/mp4"> <!-- Modern browsers -->
+			<source src="video/example.webm" type="video/webm"> <!-- Older browsers -->
+			<source src="video/example.ogv" type="video/ogv"> <!-- Other Older browsers -->
+			<!-- Browser will select first supported video format from list above( 3 most popular )
+			For rest of the Legacy browsers , that shows videos via Adobe Flash plugin -->
+			Your web browser is outdated and does not support HTML video
+			Please consider <a href="http://browsehappy.com">updating</a>.
+			<!-- To avoid complications (speed, video resolution, customised control buttons( requires JavaScript) ))
+			   	Please consider Vido Hosting Services until you became AN experienced web developer -->
+		</video>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		<h2>Pictures</h2>
+		<p><img src="images/life-on-the-tracks.jpg" alt="Squirell on train tracks"></p>
+		<p>Image of a cat</p><p><img src="../cat.jpg" alt="A Cat"></p>
+	</body>
+
+</html>
