@@ -8,11 +8,31 @@
 
 	<body>
 
+		<!-- Structural elements:
+					<header>  can be used inside <body>, <article>
+
+					<footer>  can be used inside <body>, <article>
+
+					<article>  can be used inside <body> , <article>
+										Article is something semantically complete:
+					 					Example: Blog post, article.
+
+					<aside>  [Multiple] Section(s) of the page, related to the content, surrounded it,
+									 but should be viewed separately from the content.
+									 Example: Glossary
+									 Asides are useally related to content of the direct parent.
+									 Article is direct parent of Glossary,
+									 Body is direct parent of Sidebar.
+	 	-->
+
 		<header>
 			<h1>My Website</h1>
 			<p>This is the slogan of the website.</p>
-
-			<nav>
+			<nav> <!-- Navigation = <nav> Entire purpose is navigation in the website
+							It is useally used in <header> for sole purpose of navigation
+							<nav> has semantical meaning of Navigation on the web site !!! -->
+							<!-- popular structure of nav as example below (<ul><li><a></a></li> ... </ul>)
+						 -->
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="indexmy.html">My own Home page</a></li>
@@ -21,15 +41,17 @@
 					<li><a href="contact.html">Contact Us</a></li>
 				</ul>
 			</nav>
-
 		</header>
 
 		<article>
-
+			<!-- Header and footer elements may be used
+			     inside  <body>, <article> elements
+			 -->
 			<header>
 				<h2>Sample Article</h2>
 				<p>Posted on July 22, 2014</p>
 			</header>
+
 			<div class="article-body">
 				<!-- class="article-body is used because there is no stanard article-body element defined in HTML5" -->
 				<!-- Another reason is <div> and <span> elements do not have semantic meaning,
@@ -38,6 +60,7 @@
 				-->
 				<p>Lorem <span class="brand-color">ipsum</span> dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</div> <!-- /article-body -->
+
 			<footer>
 				<p>Posted in News category with 0 comments</p>
 			</footer>
