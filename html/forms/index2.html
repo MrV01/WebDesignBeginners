@@ -7,6 +7,12 @@
 	</head>
 
 	<body>
+		<!-- Input element of <form>s.
+				Attribute type="" important for touch-screen users.
+			  Modern browsers are running automatic check-up/helping
+			  for instance on tablets type="tel" initiates touch screen poup-up "phone keyboard"
+			  type="email"  initiates automatic check-up for @ symbol presence
+			-->
 
 		<form>
 			<h2>Example of an email input:</h2>
@@ -20,6 +26,7 @@
 			<h2>Example of a multi-line input:</h2>
 			<label for="yourMessage">Your Message:</label>
 			<textarea id="yourMessage" name="yourMessage"></textarea>
+
 			<input type="submit" value="Save!">
 
 		</form>

@@ -8,10 +8,18 @@
 
 	<body>
 
-		<form>
-		<h2>Example of &ldquo;Select&rdquo; input.</h2>
-	<fieldset>
+		<!-- Choosing from predetement set of options -->
+		<!-- The inputs are always associate with <form>  (container element or predecessor)
+	 			<input type="submit" name="submit" value="SUBMIT"
+			  !!! in name="" attributes we put name of the input value
+			      which we want to receive to our program from the <form>
+			-->
+	<form> 
+	<h2>Example of &ldquo;Select&rdquo; input.</h2>
+	<fieldset>  <!-- Semanically Draws a border  arount set of <input> fielde -->
+		<!-- Used when user expect long list to apper to choose from -->
 		<label for="favoriteColor">What is your favorite color?</label>
+		<!-- Options are associated with they parent =  <select> element  -->
 		<select id="favoriteColor" name="favoriteColor">
 			<option value="colorRed">Red</option>
 			<option value="colorOrange">Orange</option>
@@ -20,6 +28,10 @@
 			<option value="colorViolet">Violet</option>
 		</select>
 	</fieldset>
+
+	<!-- RADIO inputs( <input type="radio"> )are Used when fewer options exist then for <select> usecase
+  			And selections made are more important
+	-->
 
 		<h2>Example of &ldquo;Radio&rdquo; inputs.</h2>
 		<fieldset>

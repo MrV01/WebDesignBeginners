@@ -5,18 +5,26 @@
       <title>HTML Forms 1</title>
   </head>
   <body>
+    <!-- Forms are usedd to receive user input and pass it to the page -->
+    <!-- "User experince" Front end part of forms are covered are covered  -->
     <form>
       <label for="firstName">First Name:</label>
+      <!-- <label for='x'> should be associated with <inpit id='x'>
+            by attribites for=""  and id="" values are matching-->
       <input id="firstName" type="text" name="firstName">
       <label for="lastName">Last Name:</label>
       <input id="lastName" type="text" name="lastName">
       <!-- Nesting method to label input. Works for browsers, not so good
-          for reading devices Therefore is not recommended at themoment.
+          for reading devices Therefore is not recommended at the moment.
       -->
       <label>Middle Name:
         <input type="text" name="middleName">
       </label>
+      <!-- Button which returns value of value="" attribute -->
       <input type="submit" value="This is Submit button!!!">
+
+      <!-- attribure name="" is used to communicate with programming languages
+          submit button do not require name="" attribute -->
 
     </form>
 
