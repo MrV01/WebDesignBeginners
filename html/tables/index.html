@@ -5,40 +5,66 @@
 		<meta charset="utf-8">
 		<title>Homepage Tables</title>
 	</head>
+	<!-- Attention, tables are not for the layout !
+				They are dedicated for tabular data HTML representation
+				<table>
+							<thead>
+							  <tr>
+									<th>	</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td> </td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td> </td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td> </td>
+								</tr>
+							</tfoot>
+				</table>
+	-->
 
 	<body>
       <table>
-        <thead>
-        <tr>
-          <th>Name</th>  <!-- Column header -->
-          <th>Asile</th>
-          <th>Price</th>
-          <th>Items</th>
-        </tr>
+        <thead> <!--Best practice. <thead>, <tbody>, <tfoot>
+					 				Reasons: 1 extra hooks for CSS. 2. Increase semantical richfulness of our HTML -->
+        	<tr>
+	          <th>Name</th>  <!-- Column header -->
+	          <th>Asile</th>
+	          <th>Price</th>
+	          <th>Quantity</th>
+        	</tr>
         </thead>
-        <tfoot>  <!-- Footer element Can be any side of tbody (up, down) -->
-          <tr>
+        <tfoot>  <!-- Footer element Can be any side of tbody (up, down) for modern browsers.
+									For the legacy browsers <tfoot> must be after <tbody> -->
+          <tr> <!-- Column footer -->
             <td>Total</td> <!-- <td> Table Data (aka: Column) -->
             <td>N/A</td>
             <td>$4.25</td>
             <td>2</td>
-
           </tr>
         </tfoot>
-        <tbody>
-        <tr> <!-- Table Row (data) -->
-          <td>Bread</td> <!-- <td> Table Data (aka: Column) -->
-          <td>2</td>
-          <td>$2.75</td>
-          <td>1</td>
-        </tr>
-        <tr>
-          <td>Milk</td>
-          <td>3</td>
-          <td>$1.50</td>
-          <td>1</td>
-        </tr>
-      </tbody>
+
+        <tbody> <!--Best practice. Reasons: 1 extra hooks for CSS. 2. Increase semantical richfulness of our HTML -->
+	        <tr> <!-- Table Row (data) -->
+	          <td>Bread</td> <!-- <td> Table Data (aka: Column) -->
+	          <td>2</td>
+	          <td>$2.75</td>
+	          <td>1</td>
+	        </tr>
+	        <tr>
+	          <td>Milk</td>
+	          <td>3</td>
+	          <td>$1.50</td>
+	          <td>1</td>
+	        </tr>
+      	</tbody>
       </table>
 
   </body>
