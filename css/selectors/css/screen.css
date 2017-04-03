@@ -1,0 +1,73 @@
+/* Css RULE :  <selector> { "how we want to style element(s) we have selected"
+           "declaration";
+					 "attribute": value;
+					  }
+ */
+	/* Selectors can be:
+		1. Type selectors
+		    	it is name of element: <p> <h1>
+		2. Descendant selectors
+					We tap to the russian doll model.
+					<type selector> <type selector> ...
+
+		3. Class selectors
+
+		There are many more selectirs exists.
+		Above three are the most basic and useful.
+
+	 */
+
+	 /*
+	  CASCADE style sheets ( CSS )
+		 	Cascade:
+				default from Browser CSS: text is black color
+				 	Our stylesheet: No text is green!
+												body { color: green; }
+			Inheritence:
+						Descendants inherit attibutes from the parents
+
+						(Not all attributes ( declarations) can be inherited)
+
+			Specificity:
+						Which declaration is whinning in case of competitive
+						1. descendant selector is more specific than type selector
+						2. Deeply nested specific selector is more specific than shallow
+						   descendance selector.
+						3. Class selector is more specific than descendance selector.
+						4. Descendance selector with class is more specific than descendant selector.
+						5. The two rules with same specificity values.
+						  	Last defined : whins. 
+	 */
+
+/* Cascade of the text color instead of browsers default black */
+body {
+	color: green;
+}
+
+/* type selector  h1 */
+h1 {
+	color: orange;
+	text-align: center;
+}
+
+/* descendant selector  =  header p */
+header p {
+	color: green;
+}
+
+/* descendant selector  =  header p span */
+header p span {
+	color: blue;
+}
+
+/* Class selector example: <p class="highlight"> in html file  */
+/* Because we cannot distinguish (from CSS prospective) highlited <p> from other <p>s   */
+
+.highlight {
+	background-color: yellow;
+}
+
+/* Mix of type selector and class selector "as descendant selector" */
+footer .highlight {
+	background-color: LightGray;
+}
