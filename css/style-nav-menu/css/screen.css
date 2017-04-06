@@ -1,5 +1,5 @@
 html {
-	background-color: #869960;  /* Using HTML Color Picker uniq shade of green  */
+	background-color: #869960;
 }
 
 body {
@@ -24,7 +24,6 @@ img {
 
 header {
 	padding-top: 20px;
-	padding-bottom: 20px;
 	color: #617140;
 }
 
@@ -38,6 +37,38 @@ header p {
 	margin: 0;
 }
 
+/* Site Navigation  menu */
+.site-nav {  /* some top margin for menu */
+	margin-top: 20px;
+}
+
+.site-nav ul {   /* remove default margins and paddings  */
+	margin: 0;
+	padding: 0;
+}
+
+.site-nav li {  /* Remove bullets,  */
+	list-style: none;
+	float: left;
+	margin-right: 5px;
+}
+
+.site-nav a {
+	display: block; /*  By default link elements were inline elem, and no padding were applikable */
+	color: #617140;   /* links now suddle green colored */
+	text-decoration: none;
+	padding: 10px 20px;
+	border: 3px solid #e5e9dc;
+	border-bottom: none;
+}
+
+.site-nav a:hover {  /* pseudo selector to add hover effect */
+	background-color: #e5e9dc;
+}
+
+/* End Site Navigation  menu */
+
+
 .content-area {
 	border-top: 3px solid #e5e9dc;
 	border-bottom: 3px solid #e5e9dc;
@@ -46,8 +77,7 @@ header p {
 .main-area {
 	width: 66%;
 	float: left;
-	padding-right: 40px;  /* Breaks the layout 66% + 40px  + 34% > 100%  .
-																					 Use "box-sizing: border-box"  year 2010 fix to fix the layout */
+	padding-right: 40px;
 	box-sizing: border-box;
 }
 
@@ -55,7 +85,7 @@ header p {
 	width: 34%;
 	float: left;
 	background-color: #e5e9dc;
-	padding: 20px 40px; /* top right bottom left   padding shorthand*/ 
+	padding: 20px 40px;
 	box-sizing: border-box;
 	font-size: 85%;
 }

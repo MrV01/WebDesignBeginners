@@ -1,5 +1,5 @@
 html {
-	background-color: #869960;  /* Using HTML Color Picker uniq shade of green  */
+	background-color: #869960;
 }
 
 body {
@@ -7,9 +7,27 @@ body {
 	font-size: 87%;
 }
 
-img {
+img {  /* images will automatically shrink to fit a column of  the layout */
 	max-width: 100%;
 	height: auto;
+}
+
+/* Banner Overlay */
+.image-banner {
+	position: relative;
+}
+
+.image-banner img {
+	display: block;
+}
+
+.banner-description {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: #FFF;
+	background-color: rgba(0, 0, 0, .65);
+	padding: 15px 25px;
 }
 
 .container {
@@ -24,7 +42,6 @@ img {
 
 header {
 	padding-top: 20px;
-	padding-bottom: 20px;
 	color: #617140;
 }
 
@@ -38,6 +55,38 @@ header p {
 	margin: 0;
 }
 
+/* Site Navigation */
+.site-nav {
+	margin-top: 20px;
+}
+
+.site-nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+.site-nav li {
+	list-style: none;
+	float: left;
+	margin-right: 5px;
+}
+
+.site-nav a {
+	display: block;
+	color: #617140;
+	text-decoration: none;
+	padding: 10px 20px;
+	border: 3px solid #e5e9dc;
+	border-bottom: none;
+}
+
+.site-nav a:hover {
+	background-color: #e5e9dc;
+}
+
+/* End Site Navigation */
+
+
 .content-area {
 	border-top: 3px solid #e5e9dc;
 	border-bottom: 3px solid #e5e9dc;
@@ -46,8 +95,7 @@ header p {
 .main-area {
 	width: 66%;
 	float: left;
-	padding-right: 40px;  /* Breaks the layout 66% + 40px  + 34% > 100%  .
-																					 Use "box-sizing: border-box"  year 2010 fix to fix the layout */
+	padding-right: 40px;
 	box-sizing: border-box;
 }
 
@@ -55,7 +103,7 @@ header p {
 	width: 34%;
 	float: left;
 	background-color: #e5e9dc;
-	padding: 20px 40px; /* top right bottom left   padding shorthand*/ 
+	padding: 20px 40px;
 	box-sizing: border-box;
 	font-size: 85%;
 }
