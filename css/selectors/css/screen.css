@@ -28,15 +28,16 @@
 
 						(Not all attributes ( declarations) can be inherited)
 
-			Specificity:
-						Which declaration is whinning in case of competitive
+			Specificity: Takes part in situation when there are conflicting CSS settings are set  on the elements
+			EXPLICITLY in the custom style sheets.
+						Which declaration is whinning in case of competitive to each other.
 						1. descendant selector is more specific than type selector
 						2. Deeply nested specific selector is more specific than shallow
 						   descendance selector.
 						3. Class selector is more specific than descendance selector.
 						4. Descendance selector with class is more specific than descendant selector.
 						5. The two rules with same specificity values.
-						  	Last defined : whins. 
+						  	Last defined : whins.
 	 */
 
 /* Cascade of the text color instead of browsers default black */
@@ -44,10 +45,27 @@ body {
 	color: green;
 }
 
+p {
+	color: red;
+}
+
+p {
+	color: green;
+}
+
 /* type selector  h1 */
 h1 {
+	font-size: 135%;
+	font-style: normal;
+}
+
+/* color of footer CSS element */
+footer {
 	color: orange;
-	text-align: center;
+}
+
+footer p {
+		color: violet;
 }
 
 /* descendant selector  =  header p */
@@ -56,7 +74,7 @@ header p {
 }
 
 /* descendant selector  =  header p span */
-header p span {
+header  p span {
 	color: blue;
 }
 

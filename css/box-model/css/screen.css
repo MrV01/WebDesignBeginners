@@ -1,0 +1,42 @@
+
+h1 {
+  font-style: normal;
+  color: red;
+  text-align: right;
+}
+
+/* box  is the way to put boxes on the secreen
+    width:   Defines the width of the box.
+    height:  Defines the height of the box.
+    padding:  Defines some empty space inside the box
+    margin:   Defines some empty space outside the box
+
+*/
+
+.box-a {
+  color: green;
+  background-color: lightgray;
+  padding: 30px;
+  border: 3px solid black;
+  margin-bottom: 20px;  /* Margin is the way to set space between box-a (top) and box-b(bottom) */
+  width: 250px;
+  height: 150px;
+  /* In recent years new property introduced to make job of front-end developers a little easier
+      box-sizing: border-box;  Which is supported from 2010-ish
+      box-a is 250px width now, including padding and  border
+  */
+  box-sizing: border-box;
+
+}
+
+.box-b {
+  background-color: orange;
+  /* Identical width and height  WITHOUT  identical padding  and border settingd
+      give DIFFERENT looking box B    250 + 2*30 + 2* 3 = 316px */
+  width: 250px;  /* when using box-sizing:border-box;  in box-a class we do not  need to do ariphmetics */
+  height: 150px;
+}
+
+div.box-a {
+    color: blue ;
+}

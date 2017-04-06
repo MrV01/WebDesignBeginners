@@ -1,0 +1,60 @@
+html {
+	background-color: #FFF;
+}
+/*
+	Human eye prefer to read "so many characters per line"
+	So class="container" wraps all content in the <body> element.
+	and centers the content.
+*/
+.container {
+	max-width: 940px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*
+	 class="content-area"
+ */
+.content-area {
+	border-top: 3px solid #000;
+	border-bottom: 3px solid #000;
+}
+
+.main-area {  /* left column of  two-column layout  */
+	width: 66%; /* width        property for 2/3 of available width */
+	float: left;  /* float left  in typographical  prospective ( if  there is space on the left, go for it !) */
+}
+
+.sidebar {  /* righ column of  two-column layout  */
+	width: 34%;   /* Total width of left column  + width of right column <= 100% */
+	float: left;
+}
+
+.fix {  /* Not the best practice : <div class="fix"></div> faux element after the last float element of parent .content-area
+							to make parent element aware that floating layout finished,
+							From here browser have chance to continue rendering of the parent
+				   */
+	clear: both;  /* or left or right depending of floating type.  clear:both clears them all!  */
+}
+
+
+/* The group class below is "cut and paste" solution. Just add class=" group"  to the parent of floats
+		This trick works for all browsers, including legacy ones!!!
+
+		The reusable utility class "group" guarantee the reusable floats layout, whithout adding or using other
+		elements on the page for clearing floats purpose. 
+*/
+
+.group:before,
+.group:after {
+	content: "";
+	display: table;
+}
+
+.group:after {
+	clear: both;
+}
+
+.group {
+	zoom: 1;
+}
