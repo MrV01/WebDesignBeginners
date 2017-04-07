@@ -7,35 +7,9 @@ body {
 	font-size: 87%;
 }
 
-img {  /* images will automatically shrink to fit a column of  the layout */
+img {
 	max-width: 100%;
 	height: auto;
-}
-
-/* Banner Overlay */
-.image-banner {  /* HTML Element with "position:relative", parent of "banner-description" , */
-														/*		it serves as refernce point for childs with "position:absolute" . */
-														/*  When there is no parent element with "position:relative" then browser window is used. */
-	position: relative;  /* Position relative to the position where the element "would-be" in normal flow */
-  /* left: 30px;  /* Moves class="image-banner" 30px left to the normal position, */
-	/*  rest of page's elements respect normal position of the " relative"element during the page rendering */
-	z-index: 2; /* In case of overlapping with  other "relative" element, greater z-index puts "this" on top  */
-}
-
-.image-banner img { /* img element is treated as block element now, */
-																	/* therefore no "inline-box" default padding reserved   */
-	display: block;
-}
-
-.banner-description {
-	position: absolute;
-	bottom:  0px; /* "Ypx" gap between bootm of "this" element,
-														and the parent ( with position:relative ) element bottom*/
-	left: 0px;  /* "Xpx"  gap on the left of "this" element,
-												and the parent ( with position:relative ) element left */
-	color: #FFF;
-	background-color: rgba(0, 0, 0, .65);
-	padding: 15px 25px;
 }
 
 .container {
@@ -106,6 +80,52 @@ header p {
 	padding-right: 40px;
 	box-sizing: border-box;
 }
+
+/* Table Styles  START */
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.col-item-name {
+	width: 60%;
+}
+
+.col-quantity,
+.col-price {
+	width: 20%;
+}
+
+table th {  /* step 1 */
+	text-align: left;
+	background-color: #869960;
+	color: #FFF;
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, .4);
+}
+
+table th,
+table td {
+	border: 1px solid #869960;
+	padding: 10px;
+	vertical-align: top;
+}
+
+table tbody tr:nth-child(even) td {
+	background-color: #E5E9DC;
+}
+
+table.grocery-list tr :nth-child(2),
+table.grocery-list tr :nth-child(3) {
+	text-align: center;
+}
+
+table tbody tr:hover td {
+	background-color: #E6DCE9;
+}
+
+/* Table Styles  END */
 
 .sidebar {
 	width: 34%;
