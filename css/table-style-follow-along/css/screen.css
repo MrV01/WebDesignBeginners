@@ -81,6 +81,57 @@ header p {
 	box-sizing: border-box;
 }
 
+/* Table Styles START */
+
+table {  /* baseline settings for ALL tables on our page */
+		border-spacing: 0 ; /* Remove table spacing in whole table */
+		border-collapse: collapse; /* resolve smashing of cells borders to each other ( double-thick borgers) */
+		width: 100% ; /* table uses all available column space now . By default tables tend to shrink themselves */
+}
+
+/* Table Columns styling via <th class=""> */
+.col-item-name {
+	width: 60%; /* Item name  column width 60%s  */
+}
+
+.col-quantity,
+ .col-price {
+	width: 20%; /* both Quantity and Price column have width 20% */
+}
+
+
+table th {  /* <th>  Table Title */
+	text-align: left;
+	background-color: #869960;
+	color: #FFF;
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+
+}
+
+table th,
+table td {
+	border: 1px solid #869960;  /* Border around all cells in the table*/
+	padding: 10px; 	/* Padding arpund cell values */
+	vertical-align: top;  /* instead of  browser default vertical-align: middle */
+}
+
+/* Zibra table rows coloring . To make it easy on eyes */
+table tbody tr:nth-child(even) td {
+	background-color: #E5E9DC;
+
+}
+
+/* Second and third column content aligned to center . For tables in  class="grocery-list"  only
+		because some other tables may have different number of colunms, etc */
+table.grocery-list tr  :nth-child(2),
+table.grocery-list tr :nth-child(3) {
+	text-align: center;
+}
+
+
+
+/* Table Styles END */
+
 .sidebar {
 	width: 34%;
 	float: left;
@@ -98,6 +149,7 @@ footer {
 	padding-top: 20px;
 }
 
+/* Floats  Clearing trick - standard approach for all browsers.  ( clear:[ left | right | both ]) */
 .fix {
 	clear: both;
 }
