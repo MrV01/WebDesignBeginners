@@ -53,7 +53,11 @@ html {
 body {
 	font-family: 'PTSans', Arial, sans-serif;
 	font-size: 15px;
+	margin: 0;
+	padding: 0;
 }
+
+
 
 img {
 	max-width: 100%;
@@ -64,32 +68,6 @@ a {
 	text-decoration: none;
 }
 
-/* Birds Background Demo */
-.birds {
-	background: #c2bbb1 url(../images/bird.jpg) center center no-repeat;
-  /* shorthand of the above statement starts  */
-	background-color: #c2bbb1;
-	background-image: url(../images/bird.jpg);
-	background-position: center center; /* horizontally and vertically */
-	background-repeat: no-repeat;
-  /* the shorthand ends */
-	background-size: 60px 40px; /* important background proprty to scale larger image */
-	background-size: cover;
-	text-align: center; /* Setting text alignment in div class="birds" */
-	padding: 100px 0;
-}
-
-.birds p {   /* pargraph on top of the background image  */
-	margin: 0;
-	background-color: rgba(0, 0, 0, .45);
-	color: #FFF;
-	text-shadow: 3px 3px 0 #000;
-	display: inline-block;
-	padding: 10px;
-}
-
-/* End Birds Demo */
-
 /* Main Column Typography */
 .main-area h2 {
 	font-size: 200%;
@@ -97,11 +75,14 @@ a {
 	font-style: italic;
 	letter-spacing: 4px;
 	word-spacing: 10px;
+	text-shadow: 2px 10px 10px rgba(0, 0, 0, .5);
 	text-transform: lowercase;
 }
 
 .main-area p {
 	font-size: 108%;
+	text-align: left;
+	text-indent: 25px;
 }
 
 /* Banner Overlay */
@@ -123,33 +104,19 @@ a {
 }
 
 .container {
-	width: 940px;
-	margin-left: auto;
-	margin-right: auto;
-	/*
-	 property "background:"" it deescribes MULTIPLE comma-sparated background images.
-	 "color-tile.png" twice (Using COMMA - separated syntax ):
-	  ... left bottom repeat-x   , ... left top repeat-x
-
-		!!! In The LAST layer use is solid background color for not yet tiled background spce
-		   ( #FFF in the example below. )
-	*/
-	background: url(../images/color-tile.png) left bottom repeat-x, /* if overlapped, displayed on top of the layers */
-							url(../images/color-tile.png) left center repeat-x, /* in the middle */
-						#FFF url(../images/color-tile.png) left top repeat-x; /* bootom of the layers */
-  /* background-repeat: repeat-x; very small .png repeated by browser, save time/bandwith on downloading  */
-	padding-top: 15px;
+	max-width: 940px; /* max-width versus width
+											helps in case of smaller screens
+											to avoid horisontal scroll bars
+										*/
+	margin: 0 auto;
 	padding-left: 40px;
-	box-sizing: border-box;  /* clear floats inside the container */
+	padding-right: 40px;
 }
 
-header {  /* styling <header> element (background image should be taller than necessary to prevent layout break during design )*/
+header {
 	padding-top: 20px;
-	color: #617140;
-  background-color: #FFF; /* grey for  debugging */
-	background-image: url(../images/flower.jpg); /* the file path is relative to CSS directory*/
-	background-position: right center; /* Align horizontally ( right), and vetically (center)  */
-	background-repeat: no-repeat; /* to avoid duplication of the image of flower.jpg on the left side (background-position: right) */
+	color: #FFF;
+	background-color: #617140;
 }
 
 header h1 {
@@ -180,10 +147,9 @@ header p {
 
 .site-nav a {
 	display: block;
-	color: #617140;
+	color: #FFF;
 	text-decoration: none;
-	padding: 10px 20px;  /* changed padding size of buttons of navigation menu */
-	background-color: #FFF;
+	padding: 10px 20px;
 	border: 3px solid #e5e9dc;
 	border-bottom: none;
 }
@@ -194,10 +160,11 @@ header p {
 
 /* End Site Navigation */
 
-
+/* Class to wrap content between <header> and <footer>  */
 .content-area {
 	border-top: 3px solid #e5e9dc;
 	border-bottom: 3px solid #e5e9dc;
+	background-color: #FFF;
 }
 
 .main-area {
@@ -213,13 +180,13 @@ header p {
 	background-color: #e5e9dc;
 	padding: 20px 40px;
 	box-sizing: border-box;
-	font-size: 114%;
+	font-size: 85%;
 }
 
 footer {
 	text-align: center;
 	font-size: 85%;
-	color: #999;
+	color: #FFF;
 	padding-bottom: 20px;
 	padding-top: 20px;
 }

@@ -67,23 +67,16 @@ a {
 /* Birds Background Demo */
 .birds {
 	background: #c2bbb1 url(../images/bird.jpg) center center no-repeat;
-  /* shorthand of the above statement starts  */
-	background-color: #c2bbb1;
-	background-image: url(../images/bird.jpg);
-	background-position: center center; /* horizontally and vertically */
-	background-repeat: no-repeat;
-  /* the shorthand ends */
-	background-size: 60px 40px; /* important background proprty to scale larger image */
 	background-size: cover;
-	text-align: center; /* Setting text alignment in div class="birds" */
+	text-align: center;
 	padding: 100px 0;
 }
 
-.birds p {   /* pargraph on top of the background image  */
+.birds p {
 	margin: 0;
-	background-color: rgba(0, 0, 0, .45);
+	background-color: rgba(0, 0, 0, .7);
 	color: #FFF;
-	text-shadow: 3px 3px 0 #000;
+	text-shadow: 1px 1px 0 #000;
 	display: inline-block;
 	padding: 10px;
 }
@@ -126,30 +119,18 @@ a {
 	width: 940px;
 	margin-left: auto;
 	margin-right: auto;
-	/*
-	 property "background:"" it deescribes MULTIPLE comma-sparated background images.
-	 "color-tile.png" twice (Using COMMA - separated syntax ):
-	  ... left bottom repeat-x   , ... left top repeat-x
-
-		!!! In The LAST layer use is solid background color for not yet tiled background spce
-		   ( #FFF in the example below. )
-	*/
-	background: url(../images/color-tile.png) left bottom repeat-x, /* if overlapped, displayed on top of the layers */
-							url(../images/color-tile.png) left center repeat-x, /* in the middle */
-						#FFF url(../images/color-tile.png) left top repeat-x; /* bootom of the layers */
-  /* background-repeat: repeat-x; very small .png repeated by browser, save time/bandwith on downloading  */
+	background: url(../images/color-tile.png) left bottom repeat-x, #FFF url(../images/color-tile.png) left top repeat-x;
 	padding-top: 15px;
 	padding-left: 40px;
-	box-sizing: border-box;  /* clear floats inside the container */
+	box-sizing: border-box;
 }
 
-header {  /* styling <header> element (background image should be taller than necessary to prevent layout break during design )*/
+header {
 	padding-top: 20px;
 	color: #617140;
-  background-color: #FFF; /* grey for  debugging */
-	background-image: url(../images/flower.jpg); /* the file path is relative to CSS directory*/
-	background-position: right center; /* Align horizontally ( right), and vetically (center)  */
-	background-repeat: no-repeat; /* to avoid duplication of the image of flower.jpg on the left side (background-position: right) */
+	background-image: url(../images/flower.jpg);
+	background-position: right center;
+	background-repeat: no-repeat;
 }
 
 header h1 {
@@ -182,7 +163,7 @@ header p {
 	display: block;
 	color: #617140;
 	text-decoration: none;
-	padding: 10px 20px;  /* changed padding size of buttons of navigation menu */
+	padding: 10px 20px;
 	background-color: #FFF;
 	border: 3px solid #e5e9dc;
 	border-bottom: none;
@@ -210,10 +191,21 @@ header p {
 .sidebar {
 	width: 34%;
 	float: left;
-	background-color: #e5e9dc;
 	padding: 20px 40px;
 	box-sizing: border-box;
 	font-size: 114%;
+	background-color: #e5e9dc;  /* fallback for the very old browser */
+	/* Gradients are gradient transition between two colors */
+	/* slightly outdated browsers  */
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#e5e9dc), to(#FFF)); /* very outdated webkit */
+	background-image: -webkit-linear-gradient(top, #e5e9dc, #FFF); /* slightly outdated webkit  */
+	background-image: -moz-linear-gradient(top, #e5e9dc, #FFF); /* outdated Mozilla way */
+	background-image: -ms-linear-gradient(top, #e5e9dc, #FFF); /* oudated Microsoft way */
+	background-image: -o-linear-gradient(top, #e5e9dc, #FFF); /* oudated Opera way */
+
+	/* Modern browsers non browser specific*/
+	background-image: linear-gradient(to bottom /* right | left | top left| top right | etc */ , #e5e9dc, #FFF);
+	 					/* the gradient direction start-color end-color */
 }
 
 footer {

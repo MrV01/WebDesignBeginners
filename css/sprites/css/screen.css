@@ -67,23 +67,16 @@ a {
 /* Birds Background Demo */
 .birds {
 	background: #c2bbb1 url(../images/bird.jpg) center center no-repeat;
-  /* shorthand of the above statement starts  */
-	background-color: #c2bbb1;
-	background-image: url(../images/bird.jpg);
-	background-position: center center; /* horizontally and vertically */
-	background-repeat: no-repeat;
-  /* the shorthand ends */
-	background-size: 60px 40px; /* important background proprty to scale larger image */
 	background-size: cover;
-	text-align: center; /* Setting text alignment in div class="birds" */
+	text-align: center;
 	padding: 100px 0;
 }
 
-.birds p {   /* pargraph on top of the background image  */
+.birds p {
 	margin: 0;
-	background-color: rgba(0, 0, 0, .45);
+	background-color: rgba(0, 0, 0, .7);
 	color: #FFF;
-	text-shadow: 3px 3px 0 #000;
+	text-shadow: 1px 1px 0 #000;
 	display: inline-block;
 	padding: 10px;
 }
@@ -126,30 +119,18 @@ a {
 	width: 940px;
 	margin-left: auto;
 	margin-right: auto;
-	/*
-	 property "background:"" it deescribes MULTIPLE comma-sparated background images.
-	 "color-tile.png" twice (Using COMMA - separated syntax ):
-	  ... left bottom repeat-x   , ... left top repeat-x
-
-		!!! In The LAST layer use is solid background color for not yet tiled background spce
-		   ( #FFF in the example below. )
-	*/
-	background: url(../images/color-tile.png) left bottom repeat-x, /* if overlapped, displayed on top of the layers */
-							url(../images/color-tile.png) left center repeat-x, /* in the middle */
-						#FFF url(../images/color-tile.png) left top repeat-x; /* bootom of the layers */
-  /* background-repeat: repeat-x; very small .png repeated by browser, save time/bandwith on downloading  */
+	background: url(../images/color-tile.png) left bottom repeat-x, #FFF url(../images/color-tile.png) left top repeat-x;
 	padding-top: 15px;
 	padding-left: 40px;
-	box-sizing: border-box;  /* clear floats inside the container */
+	box-sizing: border-box;
 }
 
-header {  /* styling <header> element (background image should be taller than necessary to prevent layout break during design )*/
+header {
 	padding-top: 20px;
 	color: #617140;
-  background-color: #FFF; /* grey for  debugging */
-	background-image: url(../images/flower.jpg); /* the file path is relative to CSS directory*/
-	background-position: right center; /* Align horizontally ( right), and vetically (center)  */
-	background-repeat: no-repeat; /* to avoid duplication of the image of flower.jpg on the left side (background-position: right) */
+	background-image: url(../images/flower.jpg);
+	background-position: right center;
+	background-repeat: no-repeat;
 }
 
 header h1 {
@@ -182,7 +163,7 @@ header p {
 	display: block;
 	color: #617140;
 	text-decoration: none;
-	padding: 10px 20px;  /* changed padding size of buttons of navigation menu */
+	padding: 10px 20px;
 	background-color: #FFF;
 	border: 3px solid #e5e9dc;
 	border-bottom: none;
@@ -210,11 +191,75 @@ header p {
 .sidebar {
 	width: 34%;
 	float: left;
-	background-color: #e5e9dc;
 	padding: 20px 40px;
 	box-sizing: border-box;
 	font-size: 114%;
+	background-color: #e5e9dc;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#e5e9dc), to(#FFF));
+	background-image: -webkit-linear-gradient(top, #e5e9dc, #FFF);
+	background-image: -moz-linear-gradient(top, #e5e9dc, #FFF);
+	background-image: -ms-linear-gradient(top, #e5e9dc, #FFF);
+	background-image: -o-linear-gradient(top, #e5e9dc, #FFF);
+	background-image: linear-gradient(to bottom, #e5e9dc, #FFF);
 }
+
+
+/* UI Menu */
+.ui-menu ul {
+	margin: 0;
+	padding: 0;
+}
+
+.ui-menu li {
+	float: left;
+	list-style: none;
+	margin-right: 20px;
+}
+/*
+ 	<!-- Styling <nav> element: -->
+
+	<nav class="ui-menu">
+		<ul class="group">
+			<li class="ui-home"><a href="#">Home</a></li>
+			<li class="ui-profile"><a href="#">Profile</a></li>
+			<li class="ui-settings"><a href="#">Settings</a></li>
+		</ul>
+	</nav>
+
+*/
+
+/* all <a> in class="ui-menu" have been affected */
+.ui-menu a {   /* CSS sprites idea is based on a background images */
+	display: block;
+	width: 50px; /* width of the the particular image in sprites.png */
+	height: 50px;  /* height of the the particular image in sprites.png */
+	background-position: top left; /* Start from row 1 col 1 */
+	background-image: url(../images/sprites.png); /* Sprites image (all images are in one .png file)  */
+	text-indent: -9999px;  /* hide text of the ui-menu */
+	background-repeat: no-repeat;  /* select only one image from the sprites.png */
+}
+
+/* Offset of "home" (colorful) background image from "background-image: url(../images/sprites.png)" */
+/* For some reason? the offsets in absolute pixels relative to the image.
+    background-position: <horisontal>px <vertical>px
+    must be negative !?!?!?  Is the image renders mirrored :-)
+ */
+
+ /* row 1 col 2  of 50X50px squires*/
+.ui-home a:hover { background-position: -50px 0; }
+
+/* row 1 col 2 */
+.ui-profile a {background-position: 0 -50px;}
+/* row 2 col 2 */
+.ui-profile a:hover {background-position: -50px -50px;}
+
+/* row 3 col 1 */
+.ui-settings a {background-position: 0 -100px;}
+/* row 3 col 2   "bottom right"
+   works same as  -50px -100px for url(../images/sprites.png)
+*/
+.ui-settings a:hover {background-position: -50px -100px;}
+
 
 footer {
 	text-align: center;
