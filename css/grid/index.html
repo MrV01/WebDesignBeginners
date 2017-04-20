@@ -3,13 +3,67 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>Learning CSS. GRID Responsive</title>
+		<title>Learning CSS. GRID Responsive &excl; Final edition &excl; </title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="css/screen.css">
 	</head>
 
 	<body>
+		
+		<p><h3>List of design requirements to Responsive Grid design</h3>
+			<ul>
+				<li>Large desktop monitor</li>
+					<ol>
+						<li>Main Content group of Columns
+							<ol>
+									<li>Row of 4 X Key features Columns</li>
+									<li>Row of 2 X Photos Columns</li>
+							</ol>
+						</li>
+						<li>Side Bar
+							<ol>
+								<li> One column of Side Bar</li>
+							</ol>
+						</li>
+					</ol>
+				<li>Medium desktop monitor
+					<ol>
+						<li> Main Content group of Columns
+							<ol>
+									<li>Row of 2 X Key features Columns</li>
+									<li>Row of 2 X Key features Columns</li>
+									<li>Row of 2 X Photos Columns</li>
+							</ol>
+						</li>
+						<li>Side Bar
+							<ol>
+								<li> One column of Side Bar</li>
+							</ol>
+						</li>
+					</ol>
+				</li>
+
+				<li>Tablet
+							<ol> Main Content group of Columns And Side Bar
+									<li>Row of 2 X Key features Columns</li>
+									<li>Row of 2 X Key features Columns</li>
+									<li>Row of 2 X Photos Columns</li>
+									<li> Multiple Rows of Side Bar</li>
+							</ol>
+				</li>
+				<li>Smartphone
+					<ol> Main Content And Side Bar in Single column
+							<li>Row of Key feature Column</li>
+							<li>Row of Key feature Column</li>
+							<li>Row of Key feature Column</li>
+							<li>Row of Key feature Column</li>
+							<li>Row of 2 X Photos Columns</li>
+							<li> Multiple Rows of Side Bar</li>
+					</ol>
+				</li>
+		</ul>
+	</p>
 
 		<header class="section">
 
@@ -17,7 +71,7 @@
 			<div class="container">
 				<h1>Website Title</h1>
 				<p class="hide-small"> GRID has usually 12 columns and gutters in between.
-					 Content are always start at the column, NOT gutters.</p>
+					 Content columns are always start and end at the grid column, NOT gutters.</p>
 
 				<nav class="site-nav">
 					<ul class="group">
@@ -33,6 +87,7 @@
 
 		</header>
 
+
 		<div class="content-area group section">
 
 			<!-- container -->
@@ -45,7 +100,6 @@
 					<div class="col col-md-8 push-down-sm">
 
 						<h2>Welcome to the page!</h2>
-
 						<!-- row -->
 						<div class="row">
 
