@@ -1,3 +1,42 @@
+/*
+	CSS Amimations.
+
+	 Attributes chain:
+	 	[-webkit-]animation: "animaton sequence" "animation time" [parameters];
+
+     "animation"
+		 			V
+		 "transform"
+		 			V
+		 "translate" , "scale", "rotate" , etc
+
+	1. CSS definition
+	.star {
+		-webkit-animation: slideSpin 2s infinite alternate forwards;
+		animation: slideSpin 2s infinite alternate forwards;
+		width: 25%;
+		height: auto;
+	}
+  2. Animation sequence:
+			@-webkit-keyframes slideSpin {
+				Comment: Attributes are similar to W3C below:
+			}
+			@keyframes slideSpin {
+			50% {
+				transform: translateX(150%) scale(.5);
+			}
+
+			75% {
+				transform: translateX(150%) rotate(180deg) scale(.5);
+			}
+
+			100% {
+				transform: translateX(300%) rotate(180deg);
+			}
+
+		  }
+*/
+
 /* Custom Fonts */
 @font-face {
 	font-family: 'PTSans';
@@ -227,14 +266,6 @@ header p {
 }
 
 
-
-
-
-
-
-
-
-
 /* Bounce Animation. Webkit specific */
 @-webkit-keyframes fadeBounce {
 
@@ -376,7 +407,7 @@ header p {
 @keyframes slideSpin {
 
 	50% {
-		transform: translateX(150%) scale(.5);
+		transform: translateX(150%) scale(.75);
 	}
 
 	75% {
@@ -384,15 +415,15 @@ header p {
 	}
 
 	100% {
-		transform: translateX(300%) rotate(180deg);
+		transform: translateX(300%) rotate(270deg);
 	}
 
 }
 
 
 .star {
-	-webkit-animation: slideSpin 2s infinite alternate forwards;
-	animation: slideSpin 2s infinite alternate forwards;
+	-webkit-animation: slideSpin 5s infinite alternate forwards;
+	animation: slideSpin 5s infinite alternate forwards;
 	width: 25%;
 	height: auto;
 }
