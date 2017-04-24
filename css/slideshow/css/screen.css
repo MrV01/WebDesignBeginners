@@ -1,42 +1,3 @@
-/*
-	CSS Amimations.
-
-	 Attributes chain:
-	 	[-webkit-]animation: "animaton sequence" "animation time" [parameters];
-
-     "animation"
-		 			V
-		 "transform"
-		 			V
-		 "translate" , "scale", "rotate" , etc
-
-	1. CSS definition
-	.star {
-		-webkit-animation: slideSpin 2s infinite alternate forwards;
-		animation: slideSpin 2s infinite alternate forwards;
-		width: 25%;
-		height: auto;
-	}
-  2. Animation sequence:
-			@-webkit-keyframes slideSpin {
-				Comment: Attributes are similar to W3C below:
-			}
-			@keyframes slideSpin {
-			50% {
-				transform: translateX(150%) scale(.5);
-			}
-
-			75% {
-				transform: translateX(150%) rotate(180deg) scale(.5);
-			}
-
-			100% {
-				transform: translateX(300%) rotate(180deg);
-			}
-
-		  }
-*/
-
 /* Custom Fonts */
 @font-face {
 	font-family: 'PTSans';
@@ -125,24 +86,24 @@ a {
 }
 
 @media screen and (min-width: 1280px) {
-
+	
 	body {
 		font-size: 16px;
 	}
-
+	
 	.container {
 		max-width: 1200px;
 	}
-
+	
 }
 
 @media screen and (max-width: 767px) {
-
+	
 	.section {
 		padding-left: 20px;
 		padding-right: 20px;
 	}
-
+	
 }
 
 header {
@@ -193,27 +154,27 @@ header p {
 }
 
 @media screen and (max-width: 1023px) {
-
+	
 	.site-nav li {
 		width: 33.332%;
 		margin-right: 0;
 	}
-
+	
 	.site-nav a {
 		padding: 15px 0;
 		margin-right: 5px;
 		margin-bottom: 5px;
 		text-align: center;
 	}
-
+	
 }
 
 @media screen and (max-width: 767px) {
-
+	
 	.site-nav li {
 		width: 50%;
 	}
-
+	
 }
 
 
@@ -258,103 +219,97 @@ header p {
 }
 
 @media screen and (max-width: 767px) {
-
+	
 	.hide-small {
 		display: none;
 	}
-
+	
 }
 
-
-/* Bounce Animation. Webkit specific */
+/* Bounce Animation */
 @-webkit-keyframes fadeBounce {
-
+	
 	0% {
 		opacity: 0;
 		transform: translateY(-200%);
 	}
-
+	
 	40% {
 		transform: translateY(0);
 	}
-
+	
 	55% {
 		transform: translateY(-6px);
 	}
-
+	
 	70% {
 		opacity: 1;
 		transform: translateY(0);
 	}
-
+	
 	85% {
 		transform: translateY(-3px);
 	}
-
+		
 	100% {
 		opacity: 1;
 		transform: translateY(0);
 	}
-
+	
 }
 
-/* Bounce Animation Standard W3C*/
-/* For .box-a elements */
-@keyframes fadeBounce { /* in the Percentage of the timeline */
-
-	/* Initial state  */
+@keyframes fadeBounce {
+	
 	0% {
 		opacity: 0;
 		transform: translateY(-200%);
 	}
-
-	/*  Gets into layout defined position  */
+	
 	40% {
 		transform: translateY(0);
 	}
-
-	/* Bounce up 6px */
+	
 	55% {
 		transform: translateY(-6px);
 	}
-
-	/* Fully visible, and on place */
+	
 	70% {
 		opacity: 1;
 		transform: translateY(0);
 	}
-
-	/* Boince up 3px */
+	
 	85% {
 		transform: translateY(-3px);
 	}
-
-	/* Stay on place, fully visible*/
+		
 	100% {
 		opacity: 1;
 		transform: translateY(0);
 	}
-
+	
 }
 
 
 /* End Bounce Animation */
 
-.box-a { /* "features"[1-4] menu animated  */
+
+
+
+
+
+
+
+
+
+
+
+html.cssanimations .box-a {
 	opacity: 0;
-	/* Behavior of animation Defined by the rule
-	 		@keyframes fadeBounce  */
-	animation-name: fadeBounce;
-	animation-duration: 1s;
-	animation-fill-mode: forwards; /* keeps most
-	 				recent state of the animation, instead of restoring original attr. values
-					back (i.e. opacity:0)  */
-	animation: fadeBounce 2s forwards;  /* shorthand of animation[-name -duration -fill-mode] */
+}
 
-	/* Similar: behavior of animation in -webkit- based browsers
-
-		Mozilla:		@-webkit-keyframes fadeBounce  */
-	-webkit-animation: fadeBounce 4s forwards;
+.box-a {
+	animation: fadeBounce 1s forwards;
+	-webkit-animation: fadeBounce 1s forwards;
 	background-color: #e7eff5;
 	padding: 20px 20px 0 20px;
 	border: 2px solid #d3dee7;
@@ -363,8 +318,6 @@ header p {
 	border-radius: 10px;
 }
 
-/* Animations delays settings for nth-child(s)
- 	of class "boxes" of the row in HTML <div class="row boxes"> */
 .boxes :nth-child(2) .box-a {
 	animation-delay: .5s;
 	-webkit-animation-delay: .5s;
@@ -395,76 +348,109 @@ header p {
 	transform: rotate(360deg);
 }
 
-/* Star Animation */
-@-webkit-keyframes slideSpin {
-
-	50% {
-		transform: translateX(150%) scale(.5);
-	}
-
-	75% {
-		transform: translateX(150%) rotate(180deg) scale(.5);
-	}
-
-	100% {
-		transform: translateX(300%) rotate(180deg);
-	}
-
+/* Slideshow Styles */
+.cycle-slideshow {
+	margin-bottom: 30px;
 }
 
-@keyframes slideSpin {
-
-	50% {
-		transform: translateX(150%) scale(1.75);
-	}
-
-	75% {
-		transform: translateX(150%) rotate(180deg) scale(.5);
-	}
-
-	100% {
-		transform: translateX(300%) rotate(270deg);
-	}
-
+.slide {
+	width: 100%;
+	position: relative;
 }
 
-@keyframes spinRoll {
-
-	0% {
-		transform: translateX(0%);
-	}
-
-	25% {
-		transform: translateX(75%) rotate(45deg);
-	}
-
-	50% {
-		transform: translateX(100%) rotate(90deg);
-	}
-
-	75% {
-		transform: translateX(150%) rotate(180deg);
-	}
-
-	100% {
-		transform: translateX(300%) rotate(270deg);
-	}
-
+.slide img {
+	display: block;
 }
 
-.star {
-	-webkit-animation: slideSpin 2s infinite alternate forwards;
-	animation-name: slideSpin;
-	animation-duration: 2s;
-	animation-fill-mode: forwards;
-	animation-direction: alternate; /* back and force between start and end positions*/
-	animation-iteration-count: infinite; /* OR 1,2 ,3 etc */
-	/* Shorthand for the attributes animation-XXX : */
-	animation: spinRoll 5s infinite alternate forwards;
-	width: 25%;
-	height: auto; /* height is proportional to the width */
+.slide-text {
+	position: absolute;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, .7);
+	color: #FFF;
+	width: 100%;
+	padding: 20px;
+	box-sizing: border-box;
 }
-/* End Star-Spinning Section  Styling and animation*/
+
+@media screen and (max-width: 767px) {
+	
+	.slide-text {
+		position: static;
+		background-color: #000;
+	}
+	
+}
+
+
+.slide-text h3 {
+	margin: 0;
+}
+
+/* Prev and Next Buttons */
+.cycle-prev, .cycle-next {
+	position: absolute;
+	top: 30%;
+	background-color: rgba(0, 0, 0, .35);
+	color: #FFF;
+	padding: 1px 10px;
+	display: block;
+	cursor: pointer;
+	font-size: 130%;
+	z-index: 1000;
+	opacity: 0;
+	transition: opacity .5s;
+}
+
+.cycle-next {
+	right: 0;
+}
+
+.cycle-slideshow:hover .cycle-prev,
+.cycle-slideshow:hover .cycle-next {
+	opacity: 1;
+}
+
+.cycle-pager {
+	position: absolute;
+	top: 20px;
+	z-index: 1003;
+	width: 100%;
+	text-align: center;
+}
+
+.cycle-pager span {
+	text-indent: -9999px;
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: #FFF;
+	margin: 0 4px;
+	cursor: pointer;
+}
+
+.cycle-pager .cycle-pager-active {
+	background-color: #000;
+}
+
+/* Button A Style */
+.btn-a {
+	padding: 6px 10px;
+	border-radius: 5px;
+	font-weight: bold;
+	text-transform: uppercase;
+	background-color: #365267;
+	color: #FFF;
+	font-size: 84%;
+	margin-left: 10px;
+}
+
+.btn-a:hover {
+	background-color: #FFF;
+	color: #365267;
+}
+
+
 
 
 /* Banner Overlay */
@@ -542,15 +528,15 @@ header p {
 .col-xs-1 {width: 8.332%;}
 
 @media screen and (min-width: 768px) {
-
+	
 	.row {
 		margin-right: -40px;
 	}
-
+	
 	.col {
 		padding-right: 40px;
 	}
-
+		
 	.col-sm-11 {width: 91.662%}
 	.col-sm-10 {width: 83.332%;}
 	.col-sm-9 {width: 75%;}
@@ -562,11 +548,11 @@ header p {
 	.col-sm-3 {width: 25%;}
 	.col-sm-2 {width: 16.662%;}
 	.col-sm-1 {width: 8.332%;}
-
+	
 }
 
 @media screen and (min-width: 1024px) {
-
+	
 	.col-md-11 {width: 91.662%}
 	.col-md-10 {width: 83.332%;}
 	.col-md-9 {width: 75%;}
@@ -578,11 +564,11 @@ header p {
 	.col-md-3 {width: 25%;}
 	.col-md-2 {width: 16.662%;}
 	.col-md-1 {width: 8.332%;}
-
+	
 }
 
 @media screen and (min-width: 1280px) {
-
+	
 	.col-lg-11 {width: 91.662%}
 	.col-lg-10 {width: 83.332%;}
 	.col-lg-9 {width: 75%;}
@@ -594,7 +580,7 @@ header p {
 	.col-lg-3 {width: 25%;}
 	.col-lg-2 {width: 16.662%;}
 	.col-lg-1 {width: 8.332%;}
-
+	
 }
 
 @media screen and (max-width: 1023px) {
