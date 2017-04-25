@@ -71,7 +71,7 @@ a {
 /* Main Column Typography */
 .main-area h2 {
 	font-size: 165%;
-	font-weight: normal;
+	margin: 0 0 .25em 0;
 }
 
 .section {
@@ -194,13 +194,6 @@ header p {
 	}
 }
 
-.main-area {
-	width: 66%;
-	float: left;
-	padding-right: 40px;
-	box-sizing: border-box;
-}
-
 .sidebar {
 	color: #555;
 	font-size: 85%;
@@ -226,172 +219,34 @@ header p {
 
 }
 
-/* Bounce Animation */
-@-webkit-keyframes fadeBounce {
-
-	0% {
-		opacity: 0;
-		transform: translateY(-200%);
-	}
-
-	40% {
-		transform: translateY(0);
-	}
-
-	55% {
-		transform: translateY(-6px);
-	}
-
-	70% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-
-	85% {
-		transform: translateY(-3px);
-	}
-
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-
-}
-
-@keyframes fadeBounce {
-
-	0% {
-		opacity: 0;
-		transform: translateY(-200%);
-	}
-
-	40% {
-		transform: translateY(0);
-	}
-
-	55% {
-		transform: translateY(-6px);
-	}
-
-	70% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-
-	85% {
-		transform: translateY(-3px);
-	}
-
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-
-}
-
-
-/* End Bounce Animation */
-
-
-
-
-
-
-
-
-
-
-
-
-html.cssanimations .box-a {
-	opacity: 0;
-}
-
-.box-a {
-	animation: fadeBounce 1s forwards;
-	-webkit-animation: fadeBounce 1s forwards;
-	background-color: #e7eff5;
-	padding: 20px 20px 0 20px;
-	border: 2px solid #d3dee7;
-	margin-bottom: 30px;
-	box-shadow: 0px 5px 5px -2px rgba(0, 0, 0, .10);
-	border-radius: 10px;
-}
-
-.boxes :nth-child(2) .box-a {
-	animation-delay: .5s;
-	-webkit-animation-delay: .5s;
-}
-
-.boxes :nth-child(3) .box-a {
-	animation-delay: 1s;
-	-webkit-animation-delay: 1s;
-}
-
-.boxes :nth-child(4) .box-a {
-	animation-delay: 1.5s;
-	-webkit-animation-delay: 1.5s;
-}
-
-.box-b {
-	text-align: center;
-	background-color: #CCC;
-	width: 200px;
-	height: 200px;
-	line-height: 200px;
-	margin-bottom: 40px;
-	border-radius: 50%;
-	transition: all 1s ease-out;
-}
-
-.box-b:hover {
-	transform: rotate(360deg);
-}
-
 /* Slideshow Styles */
 .cycle-slideshow {
 	margin-bottom: 30px;
 }
 
-	/* Slideshow "slide" predecessor has position:relative
-			to enable "absolute" text overlays over the image
-			(position:absolute is relative to the closest ancestor with
-			 position:relative i.e. class=".slide"  )
-			 static - default in flow (The top, right, bottom, left and z-index properties do not apply)
-			 relative - the element's position relative to itself, without changing layout
-			 						(and thus leaving a gap for the element where it would have been had it not been positioned).
-			 absolute - Do not leave space for the element. Instead, position it at
-			 						a specified position relative to its closest positioned ancestor if any, or otherwise
-			 						relative to the initial containing block.
-									Absolutely positioned boxes can have margins, and they do not collapse with any other margins.
-				fixed -   Do not leave space for the element. Instead, position it at a specified position relative
-									to the screen's viewport and don't move it when scrolled.
- */
 .slide {
 	width: 100%;
-	position: relative; /* reference point for overlays */
+	position: relative;
 }
 
 .slide img {
-	display: block; /* fit it into <div> (by default: inline ) */
+	display: block;
 }
 
-.slide-text {   /* Overlay of text on slide  */
+.slide-text {
 	position: absolute;
 	bottom: 0;
-	background-color: rgba(0, 0, 0, .4);
+	background-color: rgba(0, 0, 0, .7);
 	color: #FFF;
 	width: 100%;
 	padding: 20px;
-	box-sizing: border-box;  /* floats workaround */
+	box-sizing: border-box;
 }
 
-/* Everything smaller than tablet */
 @media screen and (max-width: 767px) {
 
 	.slide-text {
-		position: static; /* Back to standard behavior, i.e. text under the image,
-												 no overlay */
+		position: static;
 		background-color: #000;
 	}
 
@@ -434,25 +289,23 @@ html.cssanimations .box-a {
 	text-align: center;
 }
 
-.cycle-pager span { /* <span> element for each slide
-						are creeated dynamically by Cycle2 script   */
+.cycle-pager span {
 	text-indent: -9999px;
 	display: inline-block;
 	width: 10px;
 	height: 10px;
-	border-radius: 50%; /* circle radiused from square*/
+	border-radius: 50%;
 	background-color: #FFF;
 	margin: 0 4px;
-	cursor: pointer;  /* cursor shape */
+	cursor: pointer;
 }
 
-.cycle-pager .cycle-pager-active { /* .cycle-pager-active class is
-					automatically assigned by Cycle2 JS plugin  to automatically generated <span> element */
+.cycle-pager .cycle-pager-active {
 	background-color: #000;
 }
 
 /* Button A Style */
-.btn-a {  /* button styling of one of the overlays */
+.btn-a {
 	padding: 6px 10px;
 	border-radius: 5px;
 	font-weight: bold;
@@ -463,60 +316,62 @@ html.cssanimations .box-a {
 	margin-left: 10px;
 }
 
-.btn-a:hover {  /* Change colors of the button */
+.btn-a:hover {
 	background-color: #FFF;
 	color: #365267;
 }
 
 
-/* Banner Overlay */
-.image-banner {
-	position: relative;
-	margin-bottom: 40px;
-	overflow: hidden;
+/* Reveal and Hide Styles */
+/* Initial styling for the toggle-able element .read-more */
+.read-more {
+	text-decoration: underline;
+	color: blue;
 }
 
-.image-banner img {
-	display: block;
-	transition: all 2s;
+.read-more:hover {
+	text-decoration: none;
 }
 
-.image-banner:hover img {
-	transform: scale(1.5);
+/* Initial styling for the toggle-able element .toggle-btn */
+.toggle-btn {
+	display: none;
 }
 
-.banner-description {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	color: #FFF;
-	background-color: rgba(0, 0, 0, .65);
-	padding: 15px 25px;
-	opacity: 0;
-	transition-property: all;
-	transition-duration: 1s;
-	transform: translateY(100%);
-}
-
-.image-banner:hover .banner-description {
-	opacity: 1;
-	transform: translateY(0);
-}
-
-
-
-
-
-
-
-
-
-
-
+/* For all screens smaller than tablet, hide nav menu */
 @media screen and (max-width: 767px) {
-	.box-a {
-		margin-bottom: 15px;
+
+	/* "Declarative Toggle" JS  operates the class  */
+	/* when the JS successfully loaded, it adds class
+		.toggle-btn-visible (derived from .toggle-btn name) to the elements,
+		with existing data-toggle-target class
+	*/
+	.toggle-btn-visible {
+		display: block;
 	}
+
+	/* "Declarative Toggle" JS  operates the class  */
+	.toggle-target-hidden {
+		display: none;
+	}
+
+	/* "Declarative Toggle" JS  operates the class  */
+	.toggle-target-expanded {
+		display: block;
+	}
+
+}
+
+.main-area .toggle-btn-visible {
+	display: block;
+}
+
+.main-area .toggle-target-hidden {
+	display: none;
+}
+
+.main-area .toggle-target-expanded {
+	display: block;
 }
 
 /* Grid */
