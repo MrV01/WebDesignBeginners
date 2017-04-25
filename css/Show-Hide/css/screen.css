@@ -341,7 +341,10 @@ header p {
 /* For all screens smaller than tablet, hide nav menu */
 @media screen and (max-width: 767px) {
 
-	/* "Declarative Toggle" JS  operates the class  */
+	/* "Declarative Toggle" JS (https://github.com/LearnWebCode/declarativeToggle)
+	  declarativeToggle is a jQuery snippet which makes it simple to reveal sections of content on a click/tap event (think mobile navigation menus on responsive sites). Add show/hide functionality without writing a single line of JavaScript by using the data-attributes outlined below.
+
+  */
 	/* when the JS successfully loaded, it adds class
 		.toggle-btn-visible (derived from .toggle-btn name) to the elements,
 		with existing data-toggle-target class
