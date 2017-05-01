@@ -5,7 +5,11 @@ Course Web Design for beginners
 2. JAVAScript book:  http://eloquentjavascript.net/
 3.  Intorduction to WordPress: https://www.youtube.com/playlist?list=PLpcSpRrAaOaqMA4RdhSnnNcaqOVpX7qi5
 
-Side note SASS and Atom editor. 
+4. Free testing on Legacy Microsoft browsers.
+    https://developer.microsoft.com/en-us/microsoft-edge/
+
+
+Side note SASS and Atom editor.
 Installation of sass-autocompile plug-in:
 https://atom.io/packages/sass-autocompile#build-source-map
 
