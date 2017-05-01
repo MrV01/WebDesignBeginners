@@ -8,6 +8,15 @@ Course Web Design for beginners
 4. Free testing on Legacy Microsoft browsers.
     https://developer.microsoft.com/en-us/microsoft-edge/
 
+5.  Popular Communities to research and join.
+
+    - WordPress ( most accessible)
+    - Drupal
+    - Ruby on Rails ( most challenging)
+    - Symfony
+    - Codeigniter
+    
+
 
 Side note SASS and Atom editor.
 Installation of sass-autocompile plug-in:
