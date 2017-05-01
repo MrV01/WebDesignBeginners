@@ -1,6 +1,11 @@
 # WebDesignBeginners
-Udemy Course Web Design for beginners
+Course Web Design for beginners
 
+1. Beginning to learn JavaScript. https://www.youtube.com/watch?v=1vMFpT0h-WI
+2. JAVAScript book:  http://eloquentjavascript.net/
+3.  Intorduction to WordPress: https://www.youtube.com/playlist?list=PLpcSpRrAaOaqMA4RdhSnnNcaqOVpX7qi5
+
+Side note SASS and Atom editor. 
 Installation of sass-autocompile plug-in:
 https://atom.io/packages/sass-autocompile#build-source-map
 
