@@ -12,10 +12,11 @@ Course Web Design for beginners
 
     - WordPress ( most accessible)
     - Drupal
-    - Ruby on Rails ( most challenging)
+    - Ruby on Rails ( most challenging for ambitious)
     - Symfony
     - Codeigniter
-    
+
+    Surround you by the people, who value design
 
 
 Side note SASS and Atom editor.
